@@ -19,6 +19,10 @@ resource "aws_s3_bucket" "data" {
     git_repo             = "terragoat"
     yor_trace            = "0874007d-903a-4b4c-945f-c9c233e13243"
   })
+  hosted_zone_id = "Z3AQBSTGFYJSTF"
+  request_payer = "BucketOwner"
+  server_side_encryption_configuration = {"rule": {"apply_server_side_encryption_by_default": {"sse_algorithm": "AES256"}}}
+  versioning = {"enabled": false, "mfa_delete": false}
 }
 
 resource "aws_s3_bucket_object" "data_object" {
