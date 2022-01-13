@@ -48,20 +48,20 @@ resource google_compute_disk "unencrypted_disk" {
 }
 
 resource "google_sql_database_instance" "core_db" {
-  name = "name"
-  database_version = "POSTGRES_11"
-  region = var.region
+  name                = "name"
+  database_version    = "POSTGRES_11"
+  region              = var.region
   deletion_protection = false
 
   depends_on = [
-    google_service_networking_connection.private_vpc_connection]
+  google_service_networking_connection.private_vpc_connection]
 
   settings {
     # Second-generation instance tiers are based on the machine
     # type. See argument reference below.
     tier = "db-f1-micro"
     ip_configuration {
-      ipv4_enabled = false
+      ipv4_enabled    = false
       private_network = var.private_network
     }
     user_labels = var.labels

@@ -5,7 +5,15 @@ resource "aws_s3_bucket" "foo-bucket" {
   #checkov:skip=CKV_AWS_20:The bucket is a public static content host
 
   tags = {
-    Name = "foo-${data.aws_caller_identity.current.account_id}"
+    Name                 = "foo-${data.aws_caller_identity.current.account_id}"
+    git_commit           = "0b5952cd5b424f69e3c6ed9c2bcb12722ed751ab"
+    git_file             = "terraform/aws/smart_fixes.tf"
+    git_last_modified_at = "2022-01-05 09:19:51"
+    git_last_modified_by = "ravni@paloaltonetworks.com"
+    git_modifiers        = "ravni"
+    git_org              = "rotemavni"
+    git_repo             = "terragoat"
+    yor_trace            = "c61a0562-2709-44b2-8e99-b1b8eeef62d5"
   }
   versioning {
     enabled = true
@@ -22,6 +30,6 @@ resource "aws_s3_bucket" "foo-bucket" {
       }
     }
   }
-  acl           = "public-read"
+  acl = "public-read"
 }
 data "aws_caller_identity" "current" {}
