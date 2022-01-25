@@ -1,88 +1,59 @@
-resource "aws_lb_listener" "https1" {
+resource "aws_lb_listener" "default_action1" {
   load_balancer_arn = ""
-  protocol          = "HTTPS"
+  protocol          = "HTTP"
   default_action {
-    type = ""
+    type = "redirect"
+    redirect {
+      status_code = "HTTP_302"
+      protocol = "HTTPS"
+    }
   }
 }
 
-resource "aws_lb_listener" "https2" {
+resource "aws_lb_listener" "default_action2" {
   load_balancer_arn = ""
-  protocol          = "HTTPS"
+  protocol          = "HTTP"
   default_action {
-    type = ""
+    type = "redirect"
+    redirect {
+      status_code = "HTTP_302"
+      protocol = "HTTPS"
+    }
   }
 }
 
-resource "aws_lb_listener" "https3" {
+resource "aws_lb_listener" "default_action3" {
   load_balancer_arn = ""
-  protocol          = "HTTPS"
+  protocol          = "HTTP"
   default_action {
-    type = ""
+    type = "redirect"
+    redirect {
+      status_code = "HTTP_302"
+      protocol = "HTTPS"
+    }
   }
 }
 
-resource "aws_lb_listener" "tls1" {
+resource "aws_lb_listener" "default_action4" {
   load_balancer_arn = ""
-  protocol          = "TLS"
+  protocol          = "HTTP"
   default_action {
-    type = ""
+    type = "redirect"
+    redirect {
+      status_code = "HTTP_302"
+      protocol = "HTTPS"
+    }
   }
 }
 
-resource "aws_lb_listener" "tls1" {
+resource "aws_lb_listener" "default_action5" {
   load_balancer_arn = ""
-  protocol          = "TLS"
+  protocol          = "HTTP"
   default_action {
-    type = ""
+    type = "redirect"
+    redirect {
+      status_code = "HTTP_302"
+      protocol = "HTTPS"
+    }
   }
 }
-
-resource "aws_lb_listener" "tls2" {
-  load_balancer_arn = ""
-  protocol          = "TLS"
-  default_action {
-    type = ""
-  }
-}
-
-resource "aws_lb_listener" "tls3" {
-  load_balancer_arn = ""
-  protocol          = "TLS"
-  default_action {
-    type = ""
-  }
-}
-
-resource "aws_lb_listener" "tls4" {
-  load_balancer_arn = ""
-  protocol          = "TLS"
-  default_action {
-    type = ""
-  }
-}
-
-resource "aws_lb_listener" "TCP1" {
-  load_balancer_arn = ""
-  protocol          = "TCP"
-  default_action {
-    type = ""
-  }
-}
-
-resource "aws_lb_listener" "TCP2" {
-  load_balancer_arn = ""
-  protocol          = "TCP"
-  default_action {
-    type = ""
-  }
-}
-
-resource "aws_lb_listener" "UDP" {
-  load_balancer_arn = ""
-  protocol          = "UDP"
-  default_action {
-    type = ""
-  }
-}
-
