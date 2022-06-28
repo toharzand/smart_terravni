@@ -10,7 +10,7 @@ resource "aws_lb_listener" "default_action1" {
   }
 }
 
-resource "aws_lb_listener" "default_action2" {
+resource "aws_lb_listener" "default_action22" {
   load_balancer_arn = ""
   protocol          = "HTTP"
   default_action {
